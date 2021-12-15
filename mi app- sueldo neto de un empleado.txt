@@ -1,0 +1,30 @@
+Algoritmo sueldo_neto
+	Escribir 'sueldo : ' Sin Saltar
+	Leer sueldo
+	Escribir 'Horas Trabajadas : ' Sin Saltar
+	Leer hrs
+	Escribir 'Sueldo x Hora : ' Sin Saltar
+	Leer suehr
+	sueldo <- hrs*suehr
+	Si (sueldo<500) Entonces
+		desc <- 0
+	SiNo
+		Si (sueldo>=501 Y sueldo<=1000) Entonces
+			desc <- 0.02
+		SiNo
+			Si (sueldo>=1001 Y sueldo<=4000) Entonces
+				desc <- 0.05
+			SiNo
+				Si (sueldo>=4001 Y sueldo<=8000) Entonces
+					desc <- 0.10
+				SiNo
+					desc <- 0.15
+				FinSi
+			FinSi
+		FinSi
+	FinSi
+	Escribir ''
+	Escribir 'Sueldo Base         : $',sueldo
+	Escribir 'Descuento del ',desc,'% : $',(sueldo*desc)
+	Escribir 'Pago Neto           : $',sueldo-(sueldo*desc)
+FinAlgoritmo
